@@ -72,6 +72,6 @@ public class House extends Asset {
                 priceSqFt = 80.00;
                 break;
         }
-        return new BigDecimal(this.getSquareFoot() * priceSqFt + .25 * this.getLotSize());
+        return new BigDecimal(this.getSquareFoot() * priceSqFt + .25 * (this.getLotSize()));
     }
 }

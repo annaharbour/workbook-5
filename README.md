@@ -19,10 +19,14 @@ The `Asset` class is the base class for all assets in the application. It includ
 - `originalCost`: The original cost of the asset.
 
 Each subclass of `Asset` must implement the `getValue()` method to calculate the current value of the asset.
+- `description`: A brief description of the asset.
+- `dateAcquired`: The date the asset was acquired.
+- `originalCost`: The original cost of the asset.
+
 
 ---
 
-## Vehicle Class
+### Vehicle Class
 
 The `Vehicle` class is a subclass of `Asset` that represents vehicles such as cars and motorcycles. It includes additional properties specific to vehicles:
 
@@ -43,6 +47,37 @@ The value of a vehicle is calculated based on the following rules:
 2. **Mileage Adjustment**:
    - If the odometer reading exceeds 100,000 miles, the value is reduced by 25%.
    - Exception: Vehicles with "Honda" or "Toyota" in the `makeModel` are not subject to the mileage adjustment.
+
+---
+---
+
+### House Class
+
+The `House` class is a subclass of `Asset` that represents houses such as family homes and cabins. It includes 
+additional properties specific to houses:
+
+- `address`: Address of house
+- `condition`: Condition of house
+- `squareFoot`: Square footage of house
+- `lotSize`: Lot size of house
+
+### Value Calculation for Vehicles
+
+The value of a vehicle is calculated based on the following rules:
+
+1. **Condition**:
+    - A house's value is determined as
+    - $180.00 per square foot (excellent)
+    - $130.00 per square foot (good)
+    - $90.00 per square foot (fair)
+    - $80.00 per square foot (poor)
+    - PLUS 25 cents per square foot of lot size
+
+2. **Square Footage**:
+    - multiplier by condition to determine initial value
+
+3. **Lot size**:
+    - .25c for additional lot size
 
 ---
 
