@@ -16,6 +16,8 @@ public class VehiclesApp {
 //        slowRide.setCargoCapacity(10);
 //        System.out.println(slowRide);
 //        slowRide.doWheelie();
+
+
         SemiTruck semi = new SemiTruck(
                 123456, 2023, "Freightliner", "Cascadia", "White", 120000, 135000.00, 2, 80000, 300
         );
