@@ -1,9 +1,9 @@
 package com.pluralsight;
 
 public class Moped extends Vehicle {
-    public Moped(){
-        super();
-    }
+//    public Moped(){
+//        super();
+//    }
 
     public Moped(int vin, int year, String make, String model, String color, int mileage,
                  double price, int numberOfPassengers, int cargoCapacity, int fuelCapacity) {

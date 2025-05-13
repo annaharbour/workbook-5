@@ -12,9 +12,9 @@ public class Vehicle {
     private int cargoCapacity;
     private int fuelCapacity;
 
-    public Vehicle(){
-
-    }
+//    public Vehicle(){
+//
+//    }
 
     public Vehicle(int vin, int year, String make, String model, String color, int mileage,
                    double price, int numberOfPassengers, int cargoCapacity, int fuelCapacity) {

@@ -2,19 +2,20 @@ package com.pluralsight;
 
 public class VehiclesApp {
     public static void main(String[] args) {
-        // Uses full constructor
-        Moped slowRide = new Moped();
-        slowRide.setColor("Red");
-        slowRide.setFuelCapacity(5);
-        slowRide.setMake("Honda");
-        slowRide.setModel("Metropolitan");
-        slowRide.setYear(2022);
-        slowRide.setMileage(100);
-        slowRide.setPrice(2500.00);
-        slowRide.setNumberOfPassengers(1);
-        slowRide.setCargoCapacity(10);
-        System.out.println(slowRide);
-        slowRide.doWheelie();
+//        can no longer declare with empty constructor / instantiate empty object that extends Vehicle because of
+//        remove of parameterless constructor
+//        Moped slowRide = new Moped();
+//        slowRide.setColor("Red");
+//        slowRide.setFuelCapacity(5);
+//        slowRide.setMake("Honda");
+//        slowRide.setModel("Metropolitan");
+//        slowRide.setYear(2022);
+//        slowRide.setMileage(100);
+//        slowRide.setPrice(2500.00);
+//        slowRide.setNumberOfPassengers(1);
+//        slowRide.setCargoCapacity(10);
+//        System.out.println(slowRide);
+//        slowRide.doWheelie();
         SemiTruck semi = new SemiTruck(
                 123456, 2023, "Freightliner", "Cascadia", "White", 120000, 135000.00, 2, 80000, 300
         );
@@ -27,8 +28,8 @@ public class VehiclesApp {
         );
         System.out.println(hovercraft);
         hovercraft.hover(10.5);
+//        able to call vehicle methods on subclasses
         System.out.println("Hovercraft color: " + hovercraft.getColor());
-
         System.out.println("Hovercraft is hovering at height: " + hovercraft.getHoverHeight());
         System.out.println("Is hovercraft hovering? " + hovercraft.isHovering());
         hovercraft.land();
