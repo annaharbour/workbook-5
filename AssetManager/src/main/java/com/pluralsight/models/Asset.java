@@ -2,8 +2,9 @@ package com.pluralsight.models;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
-public class Asset {
+public abstract class Asset {
     private String description;
     private LocalDateTime dateAcquired;
     private BigDecimal originalCost;
@@ -22,8 +23,8 @@ public class Asset {
         this.description = description;
     }
 
-    public LocalDateTime getDateAcquired() {
-        return this.dateAcquired;
+    public String getDateAcquired() {
+        return this.dateAcquired.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
     }
 
     public void setDateAcquired(LocalDateTime dateAcquired) {
@@ -38,7 +39,5 @@ public class Asset {
         this.originalCost = originalCost;
     }
 
-    public BigDecimal getValue(){
-        return this.originalCost;
-    };
+    public abstract BigDecimal getValue();
 }

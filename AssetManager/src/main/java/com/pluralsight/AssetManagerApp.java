@@ -1,6 +1,7 @@
 package com.pluralsight;
 
 import com.pluralsight.models.Asset;
+import com.pluralsight.models.Cash;
 import com.pluralsight.models.House;
 import com.pluralsight.models.Vehicle;
 
@@ -12,26 +13,26 @@ import java.util.List;
 public class AssetManagerApp {
     public static void main(String[] args) {
         List<Asset> assets = new ArrayList<>();
-        Asset house = new House(
+        House house = new House(
                 "Beautiful family home",
                 LocalDateTime.now(),
                 new BigDecimal("250000"),
                 "123 Main Street, Springfield",
-                1, // excellent condition
+                House.condition.EXCELLENT,
                 2000, // square feet
                 5000 // lot size in square feet
         );
 
-        Asset cabin = new House(
+        House cabin = new House(
                 "cozy cottage",
                 LocalDateTime.now().minusYears(8).minusMonths(6),
                 new BigDecimal("80000"),
                 "100 Mountain View, Oklahoma",
-                3, // excellent condition
+                House.condition.GOOD,
                 1000, // square feet
                 2000 // lot size in square feet
         );
-        Asset motorBike = new Vehicle(
+        Vehicle motorBike = new Vehicle(
                 "Sporty motorcycle",
                 LocalDateTime.now().minusYears(2),
                 new BigDecimal("15000"),
@@ -39,7 +40,7 @@ public class AssetManagerApp {
                 2021,
                 12000 // odometer in miles
         );
-        Asset car = new Vehicle(
+        Vehicle car = new Vehicle(
                 "My car",
                 LocalDateTime.now().minusYears(1),
                 new BigDecimal("15000"),
@@ -47,10 +48,17 @@ public class AssetManagerApp {
                 2024,
                 10000 // odometer in miles
         );
+
+        Cash cash = new Cash("Monies", LocalDateTime.now(), new BigDecimal("200000"));
         assets.add(motorBike);
         assets.add(car);
         assets.add(house);
         assets.add(cabin);
+        assets.add(cash);
+
+
+        System.out.println(cabin.getLotSize());
+
 
         System.out.println("Assets: ");
         for (Asset asset : assets) {
